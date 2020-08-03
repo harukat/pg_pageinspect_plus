@@ -29,9 +29,7 @@ db1=# SELECT *, tuple_data_split('public.t1'::regclass, t_data, t_infomask, t_in
   2 |   8064 |        1 |     64 |    502 |      0 |        0 | (0,2)  |           5 |      11010 |     24 |        |       | \x650000000d616263646500000000000000b01b444bde02000000000000000000ec91cb1681000000 | {"\\x65000000","\\x0d6162636465","\\x00b01b444bde0200","\\x00","\\xec91cb1681000000"}
 (2 rows)
 
-db1=# SELECT *, tuple_data_parse('public.t1'::regclass, tuple_data_split('public
-.t1'::regclass, t_data, t_infomask, t_infomask2, t_bits)) FROM heap_page_items(g
-et_raw_page('public.t1', 0));
+db1=# SELECT *, tuple_data_parse('public.t1'::regclass, tuple_data_split('public.t1'::regclass, t_data, t_infomask, t_infomask2, t_bits)) FROM heap_page_items(get_raw_page('public.t1', 0));
  lp | lp_off | lp_flags | lp_len | t_xmin | t_xmax | t_field3 | t_ctid | t_infomask2 | t_infomask | t_hoff | t_bits | t_oid |                                       t_data                                       |                   tuple_data_parse
 ----+--------+----------+--------+--------+--------+----------+--------+-------------+------------+--------+--------+-------+------------------------------------------------------------------------------------+------------------------------------------------------
   1 |   8128 |        1 |     64 |    501 |      0 |        0 | (0,1)  |           5 |      11010 |     24 |        |       | \x640000000d414243444500000000000000f0e069ce4e02000100000000000000780ae30500000000 | {100,ABCDE,"2020-08-01 12:00:00",true,98765432}
