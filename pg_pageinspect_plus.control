@@ -1,0 +1,5 @@
+comment = 'pg_pageinspect_plus'
+default_version = '1.0'
+module_pathname = '$libdir/pg_pageinspect_plus'
+relocatable = false
+schema = pg_catalog
