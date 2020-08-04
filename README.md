@@ -2,7 +2,7 @@
 
 A PostgreSQL Extension which helps page inspection with contrib/pageinspect.
 
-## Urage example
+## Usage example
 
 ````
 db1=# \d public.t1
