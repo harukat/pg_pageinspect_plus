@@ -96,10 +96,9 @@ bytea2text(PG_FUNCTION_ARGS)
 	text   *text_val;
 	int len;
 
-	len = VARSIZE_ANY_EXHDR(bytea_val);
-	text_val = (text*) palloc(len + VARHDRSZ);
-	SET_VARSIZE(text_val, len + VARHDRSZ);
-	memcpy(VARDATA_ANY(text_val), VARDATA_ANY(VARDATA_ANY(bytea_val)), len);
+	len = VARSIZE_ANY(bytea_val);
+	text_val = (text*) palloc(len);
+	memcpy(text_val, VARDATA_ANY(bytea_val), len);
 	PG_RETURN_TEXT_P(text_val);
 }
 
