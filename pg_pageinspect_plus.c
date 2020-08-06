@@ -1,22 +1,5 @@
 #include "postgres.h"
 #include "fmgr.h"
-
-#include <ctype.h>
-#include <math.h>
-#include <float.h>
-#include <limits.h>
-#include <sys/time.h>
-
-#include "access/hash.h"
-#include "access/xact.h"
-#include "catalog/pg_type.h"
-#include "funcapi.h"
-#include "libpq/pqformat.h"
-#include "miscadmin.h"
-#include "nodes/nodeFuncs.h"
-#include "parser/scansup.h"
-#include "utils/array.h"
-#include "utils/builtins.h"
 #include "utils/datetime.h"
 
 PG_MODULE_MAGIC;
