@@ -2,6 +2,10 @@
 #include "fmgr.h"
 #include "utils/datetime.h"
 
+#if PG_VERSION_NUM >= 160000
+#include "varatt.h"
+#endif
+
 PG_MODULE_MAGIC;
 
 Datum bytea2timestamp(PG_FUNCTION_ARGS);
