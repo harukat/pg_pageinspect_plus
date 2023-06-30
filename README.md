@@ -1,6 +1,7 @@
 # pg_pageinspect_plus
 
-A PostgreSQL Extension which helps page inspection with contrib/pageinspect.
+This is a PostgreSQL Extension which helps page inspection with contrib/pageinspect.
+It works in PostgreSQL 10 to 16 version.
 
 ## Usage example
 
@@ -117,4 +118,5 @@ db1=# SELECT bytea2interval('\x0010acd1530000000000000000000000');
 |tuple_data_parse(rel_oid oid, tuple_data bytea[]) | text[] |
 
 bytea2text can also be used for char, varchar and json type.
+
 
