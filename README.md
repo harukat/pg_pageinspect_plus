@@ -1,7 +1,7 @@
-# pg_pageinspect_plus
+# pg\_pageinspect\_plus
 
 This is a PostgreSQL Extension which helps page inspection with contrib/pageinspect.
-It works in PostgreSQL 10 to 16 version.
+It works in PostgreSQL 10 to 17 version.
 
 ## Usage example
 
