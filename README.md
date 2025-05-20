@@ -6,6 +6,9 @@ It works in PostgreSQL 10 to 17 version.
 ## Usage example
 
 ````
+db1=# CREATE EXTENSION pageinspect ;
+db1=# CREATE EXTENSION pg_pageinspect_plus ;
+
 db1=# \d public.t1
                            Table "public.t1"
  Column |            Type             | Collation | Nullable | Default
