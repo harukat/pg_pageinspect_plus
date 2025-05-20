@@ -1,7 +1,7 @@
 # pg\_pageinspect\_plus
 
 This is a PostgreSQL Extension which helps page inspection with contrib/pageinspect.
-It works in PostgreSQL 10 to 17 version.
+It works in PostgreSQL 10 to 18 version.
 
 ## Usage example
 
@@ -66,6 +66,11 @@ db1=# SELECT *, tuple_data_split('public.t2'::regclass, t_data, t_infomask, t_in
   1 |   8096 |        1 |     96 |    541 |      0 |        0 | (0,1)  |           7 |      11010 |     24 |        |       | \x097878780d585858202000000000000090fbb5cbe24e0200b6f39d3f0000000033f68845cac023401d5b2261222c2262222c2263225d00000010acd1530000000000000000000000 | {"\\x09787878","\\x0d5858582020","\\x90fbb5cbe24e0200","\\xb6f39d3f","\\x33f68845cac02340","\\x1d5b2261222c2262222c2263225d","\\x0010acd1530000000000000000000000"}
 (1 row)
 
+db1=# SELECT tuple_data_parse('public.t2'::regclass, tuple_data_split('public.t2'::regclass, t_data, t_infomask, t_infomask2, t_bits)) FROM heap_page_items(get_raw_page('public.t2', 0));
+                                      tuple_data_parse                          
+---------------------------------------------------------------------------------------------
+ {xxx,"XXX  ","2020-08-02 21:19:00.698+09",1.234,9.87654321,"[\"a\",\"b\",\"c\"]",100:00:00}
+(1 row)
 
 db1=# SELECT bytea2text('\x0d5858582020');
  bytea2text
